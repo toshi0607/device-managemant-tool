@@ -1,44 +1,65 @@
 <%= form_for @device, :html => { :class => 'form-horizontal' } do |f| %>
+  <%# デバイス名の登録 %>
   <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
+    <%= f.label :デバイス名, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :name, :class => 'text_field' %>
     </div>
   </div>
+
+  <%# 資産管理IDの登録 %>
   <div class="control-group">
-    <%= f.label :property_id, :class => 'control-label' %>
+    <%= f.label :資産管理ID, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :property_id, :class => 'text_field' %>
     </div>
   </div>
+
+  <%# 情報機器・識別IDの登録 %>
   <div class="control-group">
-    <%= f.label :devinfo_id, :class => 'control-label' %>
+    <%= f.label :情報機器・識別ID, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :devinfo_id, :class => 'text_field' %>
     </div>
   </div>
+
+  <%# ラベルの登録 %>
   <div class="control-group">
-    <%= f.label :label, :class => 'control-label' %>
+    <%= f.label :ラベル, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :label, :class => 'text_field' %>
+      <%= f.check_box :label, :class => 'check_box' %>
     </div>
   </div>
+
+  <%# ユーザ名の登録 %>
   <div class="control-group">
-    <%= f.label :user_name, :class => 'control-label' %>
+    <%= f.label :ユーザ名, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :user_name, :class => 'text_field' %>
     </div>
   </div>
+
+  <%# 購入日の登録 %>
   <div class="control-group">
-    <%= f.label :rental_date, :class => 'control-label' %>
+    <%= f.label :購入日, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :rental_date, :class => 'text_field' %>
+      <%= f.date_field :acquisition_date, :class => 'date_field' %>
     </div>
   </div>
+
+  <%# 貸出日の登録 %>
   <div class="control-group">
-    <%= f.label :return_date, :class => 'control-label' %>
+    <%= f.label :貸出日, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :return_date, :class => 'text_field' %>
+      <%= f.date_field :rental_date, :class => 'date_field' %>
+    </div>
+  </div>
+
+  <%# 返却日の登録 %>
+  <div class="control-group">
+    <%= f.label :返却日, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_field :return_date, :class => 'date_field' %>
     </div>
   </div>
 

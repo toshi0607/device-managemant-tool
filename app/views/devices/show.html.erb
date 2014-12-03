@@ -1,33 +1,37 @@
 <%- model_class = Device -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1>デバイス情報</h1>
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:機器名) %>:</strong></dt>
   <dd><%= @device.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:property_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:資産管理ID) %>:</strong></dt>
   <dd><%= @device.property_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:devinfo_id) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:情報機器・識別ID) %>:</strong></dt>
   <dd><%= @device.devinfo_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:label) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:ラベル) %>:</strong></dt>
   <dd><%= @device.label %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_name) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:ユーザ名) %>:</strong></dt>
   <dd><%= @device.user_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rental_date) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:購入日) %>:</strong></dt>
+  <dd><%= @device.acquisition_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:貸出日) %>:</strong></dt>
   <dd><%= @device.rental_date %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:return_date) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:返却日) %>:</strong></dt>
   <dd><%= @device.return_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:登録日) %>:</strong></dt>
+  <dd><%= @device.created_at %></dd>
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
+  <%= link_to t('.back', :default => t("デバイス一覧")),
               devices_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+  <%= link_to t('.edit', :default => t("編集")),
               edit_device_path(@device), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+  <%= link_to t('.destroy', :default => t("削除")),
               device_path(@device),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :data => { :confirm => t('.confirm', :default => t("確認", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 </div>
