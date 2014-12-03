@@ -1,45 +1,50 @@
-<%= form_for(@device) do |f| %>
-  <% if @device.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@device.errors.count, "error") %> prohibited this device from being saved:</h2>
-
-      <ul>
-      <% @device.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @device, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :property_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :property_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :devinfo_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :devinfo_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :label, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :label, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rental_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rental_date, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :return_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :return_date, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :property_id %><br>
-    <%= f.text_field :property_id %>
-  </div>
-  <div class="field">
-    <%= f.label :devinfo_id %><br>
-    <%= f.text_field :devinfo_id %>
-  </div>
-  <div class="field">
-    <%= f.label :label %><br>
-    <%= f.check_box :label %>
-  </div>
-  <div class="field">
-    <%= f.label :user_name %><br>
-    <%= f.text_field :user_name %>
-  </div>
-  <div class="field">
-    <%= f.label :rental_date %><br>
-    <%= f.datetime_select :rental_date %>
-  </div>
-  <div class="field">
-    <%= f.label :return_date %><br>
-    <%= f.datetime_select :return_date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                devices_path, :class => 'btn' %>
   </div>
 <% end %>
