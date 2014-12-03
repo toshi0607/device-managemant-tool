@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203103630) do
+ActiveRecord::Schema.define(version: 20141203141821) do
 
   create_table "devices", force: true do |t|
     t.string   "name"
@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 20141203103630) do
     t.string   "devinfo_id"
     t.boolean  "label"
     t.string   "user_name"
-    t.datetime "rental_date"
-    t.datetime "return_date"
+    t.date     "rental_date"
+    t.date     "return_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.datetime "acquisition_date"
+    t.date     "acquisition_date"
   end
 
 end
