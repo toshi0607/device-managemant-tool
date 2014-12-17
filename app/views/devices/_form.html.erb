@@ -3,7 +3,11 @@
   <div class="control-group">
     <%= f.label :デバイス名, :class => 'control-label' %>
     <div class="controls">
-      <%= f.select :name, [["Mac Book Air", "Mac Book Air"], ["Mac Book Pro", "Mac Book Pro"]] , :class => 'text_field' %>
+      <%= f.select :name, [
+                            ["Mac Book Air", "Mac Book Air"], 
+                            ["Mac Book Pro", "Mac Book Pro"]
+                          ],
+                   :class => 'text_field' %>
     </div>
   </div>
 
@@ -64,8 +68,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    <%= f.submit "登録", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("キャンセル")),
                 devices_path, :class => 'btn' %>
   </div>
 <% end %>

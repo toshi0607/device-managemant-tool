@@ -32,6 +32,6 @@
   <%= link_to t('.destroy', :default => t("削除")),
               device_path(@device),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("確認", :default => 'Are you sure?')) },
+              :data => { :confirm => t('.confirm', :default => t("確認", :default => '本当に削除しますか？')) },
               :class => 'btn btn-danger' %>
 </div>
