@@ -3,7 +3,7 @@
   <div class="control-group">
     <%= f.label :デバイス名, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+      <%= f.select :name, [["Mac Book Air", "Mac Book Air"], ["Mac Book Pro", "Mac Book Pro"]] , :class => 'text_field' %>
     </div>
   </div>
 
