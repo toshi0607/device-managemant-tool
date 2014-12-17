@@ -6,6 +6,13 @@
 
 <div>
   <%= search_form_for @search do |f| %>
+    <%= f.label :name_cont, 'デバイス名' %>
+      <%= f.select :name_cont, [
+                            ["Mac Book Air", "Mac Book Air"], 
+                            ["Mac Book Pro", "Mac Book Pro"]
+                          ],
+                    include_blank: true %>
+  <br />
     <%= f.label :user_name_cont, 'ユーザ名' %>
     <%= f.text_field :user_name_cont %>
   <br />
