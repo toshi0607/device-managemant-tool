@@ -4,7 +4,14 @@ class DevicesController < ApplicationController
   # GET /devices
   # GET /devices.json
   def index
-    @devices = Device.all
+  #  @devices = Device.all
+     @search = Device.search(params[:q])
+     @devices = @search.result
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @devices }
+    end
   end
 
   # GET /devices/1
