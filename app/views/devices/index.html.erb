@@ -8,6 +8,20 @@
   <%= search_form_for @search do |f| %>
     <%= f.label :user_name_cont, 'ユーザ名' %>
     <%= f.text_field :user_name_cont %>
+  <br />
+    <%= f.label :acquisition_date, '購入' %>
+    <%= f.date_field :acquisition_date_gteq           , include_blank: true %>〜
+    <%= f.date_field :acquisition_date_lteq_end_of_day, include_blank: true %>
+  <br />
+    <%= f.label :rental_date, '貸出日' %>
+    <%= f.date_field :rental_date_gteq           , include_blank: true %>〜
+    <%= f.date_field :rental_date_lteq_end_of_day, include_blank: true %>
+  <br />
+    <%= f.label :return_date, '返却日' %>
+    <%= f.date_field :return_date_gteq           , include_blank: true %>〜
+    <%= f.date_field :return_date_lteq_end_of_day, include_blank: true %>
+
+  <div>
 
 
     <%= f.submit '検索する', :class =>'btn btn-primary'%>
