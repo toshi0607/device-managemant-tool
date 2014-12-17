@@ -48,6 +48,9 @@ gem 'twitter-bootstrap-rails', '~> 2.2.8'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass', '2.3.2.0'
 
+#search
+gem 'rails-i18n'
+gem 'ransack'
 
 group :production do
   gem 'pg'
